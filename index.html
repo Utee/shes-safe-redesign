@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>She's Safe | Kenya's Safety Portal</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">SHE'S<span>SAFE</span></div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#about-section">About</a></li>
+                <li><a href="#map-section">Safety Map</a></li>
+                <li><a href="#report-section">Report</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#contact-section">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="badge">Kenya's Safety Portal</div>
+            <h1>Mapping Safety, <br><span class="highlight">Empowering Voices.</span></h1>
+            <p>A secure, tech-enabled space for anonymous reporting and real-time community protection across Kenya.</p>
+            <div class="hero-btns">
+                <a href="#report-section" class="primary-btn">Report Incident</a>
+                <a href="#map-section" class="secondary-btn">View Live Map</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about-section" class="about-container">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>Protecting Communities Through <span class="highlight">Data</span></h2>
+                <p>She's Safe is a Kenyan-born initiative dedicated to ending Gender-Based Violence. By combining anonymous reporting with real-time mapping, we empower women with the information they need to stay safe while providing a voice to those who have been silenced.</p>
+                <ul class="about-list">
+                    <li>🛡️ 100% Anonymous Reporting</li>
+                    <li>📍 Verified Safety Hotspots</li>
+                    <li>📞 24/7 Resource Connections</li>
+                </ul>
+            </div>
+            <div class="about-stats">
+                <div class="stat-card"><h3>10+</h3><p>Safe Zones</p></div>
+                <div class="stat-card"><h3>24/7</h3><p>Support</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="map-section">
+        <div class="map-controls">
+            <button id="locate-btn" class="control-btn">📍 Find Help Near Me</button>
+        </div>
+        <div id="map"></div>
+    </section>
+
+    <section id="report-section" class="report-container">
+        <div class="report-card">
+            <h2>Submit an Anonymous Report</h2>
+            <form id="incident-form">
+                <div class="form-group">
+                    <label for="incident-type">Type of Incident</label>
+                    <select id="incident-type" required>
+                        <option value="">Select Category...</option>
+                        <option value="harassment">Physical Harassment</option>
+                        <option value="theft">Theft/Mugging</option>
+                        <option value="domestic">Domestic Violence</option>
+                        <option value="stalking">Stalking</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="location">Location (Area/Street in Kenya)</label>
+                    <input type="text" id="location" placeholder="e.g. Westlands, Nairobi" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">What happened? (Optional)</label>
+                    <textarea id="description" rows="4" placeholder="Brief details to help others stay safe..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit Securely</button>
+            </form>
+            <p class="ussd-hint">No internet? Dial <strong>*XXX#</strong> to report via USSD</p>
+        </div>
+    </section>
+
+    <section id="resources" class="resources-section">
+        <div class="section-header">
+            <h2>Emergency Resources</h2>
+            <p>Immediate support available across Kenya.</p>
+        </div>
+        <div class="resource-grid">
+            <div class="resource-card">
+                <h3>National Helpline</h3>
+                <p>Dial <strong>1195</strong> for 24/7 GBV support.</p>
+            </div>
+            <div class="resource-card">
+                <h3>Police Emergency</h3>
+                <p>Dial <strong>999</strong> or <strong>112</strong> for immediate danger.</p>
+            </div>
+            <div class="resource-card">
+                <h3>Legal Aid</h3>
+                <p>Connect with verified pro-bono legal representatives.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-section" class="contact-container">
+        <div class="contact-card">
+            <h2>Get in Touch</h2>
+            <p>Have questions or want to partner with us?</p>
+            <form id="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea rows="5" placeholder="Your Message"></textarea>
+                <button type="submit" class="primary-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <button id="safe-exit" class="safe-exit-btn">Quick Exit (Esc)</button>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+
+    <footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-brand">
+            <div class="logo">SHE'S<span>SAFE</span></div>
+            <p>Mapping safety and providing resources for a gender-equal Kenya.</p>
+        </div>
+        <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="#about-section">About Us</a></li>
+                <li><a href="#map-section">Safety Map</a></li>
+                <li><a href="#report-section">Report Anonymously</a></li>
+            </ul>
+        </div>
+        <div class="footer-social">
+            <h4>Follow the Mission</h4>
+            <div class="social-icons">
+                <a href="#">FB</a>
+                <a href="#">TW</a>
+                <a href="#">IG</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 She's Safe Kenya. All Rights Reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>
